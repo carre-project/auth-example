@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="CarreExample">
+
+  <head>
+     <base href="/auth/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-cookies.min.js"></script>
+    <script src="script.js"></script>
+    
+  </head>
+
+  <body ng-controller="ExampleController">
+    <h1>CARRE Authentication</h1>
+     <a ng-show="user" ng-href="{{logoutUrl}}">Logout</a>
+     <a ng-hide="user" ng-href="{{loginUrl}}">Login</a>
+    <hr>
+    <div>
+      <h3>User details</h3>
+      <p>User graph : https://carre.kmi.open.ac.uk/users/{{user.username}}</p>
+      <p>User token : {{user.oauth_token}}</p>
+      <p>User email : {{user.email}}</p>
+    </div>
+
+    <div>
+      <h3>Cookie</h3>
+      <pre>{{cookie}}</pre>
+    </div>
+  </body>
+
+</html>
