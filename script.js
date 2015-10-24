@@ -17,6 +17,7 @@ angular.module('CarreExample', ['ngCookies'])
   
   // Retrieving a cookie and set initial user object
   $scope.user = $scope.cookie = $cookies.getObject('CARRE_USER');
+  console.log($cookies.get('CARRE_USER'));
   
   // Retrieving url params
   var params = $location.search();
@@ -25,10 +26,10 @@ angular.module('CarreExample', ['ngCookies'])
   if(params.login && params.username){
     delete params.login; //delete the extra param we put before
     $scope.user=$scope.cookie=params; //set user object
-    $cookies.putObject('CARRE_USER',$scope.cookie,{'domain': 'carre-project.eu'}); //set browser cookie
+    $cookies.putObject('CARRE_USER',$scope.cookie,{'domain': '.carre-project.eu','path':'/'}); //set browser cookie
   } else if(params.logout){
     $scope.user=$scope.cookie=null; //remove user object
-    $cookies.remove('CARRE_USER',{'domain': 'carre-project.eu'});  //remove browser cookie
+    $cookies.remove('CARRE_USER',{'domain': '.carre-project.eu','path':'/'});  //remove browser cookie
   }
   
   //clean up the browser url
