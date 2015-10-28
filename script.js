@@ -18,7 +18,7 @@ angular.module('CarreExample', ['ngCookies'])
 
     // Retrieving a cookie and set initial user object
     var TOKEN = $cookies.get('CARRE_USER') || '';
-
+    $scope.user = {};
     //validate cookie token with userProfile api function and get username userGraph
     if (TOKEN.length > 0) {
       $http.get(API + 'userProfile?token=' + TOKEN).then(function(res) {
@@ -31,9 +31,5 @@ angular.module('CarreExample', ['ngCookies'])
         $scope.user = {};
         console.log(err);
       });
-    }
-    else {
-      $scope.user = {};
-      TOKEN = '';
     }
   });

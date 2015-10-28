@@ -11,14 +11,8 @@
 
   <body ng-controller="ExampleController">
     <h1>CARRE Authentication</h1>
-    <div ng-show="user.username">
-      <h4>Hi {{user.username}}, <a ng-href="{{logoutUrl}}">logout</a></h4>
-     
-    </div>    
-    <div ng-show="!user.username">
-      <h4>Hello guest, <a ng-href="{{loginUrl}}">please login</a></h4>
-     
-    </div>
+    <h4 ng-show="user.username">Hi {{user.username}}, <a ng-href="{{logoutUrl}}">Logout</a></h4>
+    <h4 ng-hide="user.username">Hello guest, please <a ng-href="{{loginUrl}}">Login</a></h4>
     <hr>
     <div>
       <h3>User details</h3>
@@ -26,6 +20,13 @@
       <p>User token : {{user.oauth_token}}</p>
       <p>User email : {{user.email}}</p>
     </div>
+    <hr>
+    <div>
+      <h3>CARRE rdf explorer example</h3>
+      <a href="/rdf-explorer">Launch website example</a>
+    </div>
+    
+    
   </body>
 
 </html>
