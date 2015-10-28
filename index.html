@@ -11,19 +11,20 @@
 
   <body ng-controller="ExampleController">
     <h1>CARRE Authentication</h1>
-     <a ng-show="user" ng-href="{{logoutUrl}}">Logout</a>
-     <a ng-hide="user" ng-href="{{loginUrl}}">Login</a>
+    <div ng-show="user.username">
+      <h4>Hi {{user.username}}, <a ng-href="{{logoutUrl}}">logout</a></h4>
+     
+    </div>    
+    <div ng-show="!user.username">
+      <h4>Hello guest, <a ng-href="{{loginUrl}}">please login</a></h4>
+     
+    </div>
     <hr>
     <div>
       <h3>User details</h3>
       <p>User graph : https://carre.kmi.open.ac.uk/users/{{user.username}}</p>
       <p>User token : {{user.oauth_token}}</p>
       <p>User email : {{user.email}}</p>
-    </div>
-
-    <div>
-      <h3>Cookie</h3>
-      <pre>{{cookie}}</pre>
     </div>
   </body>
 
