@@ -6,7 +6,7 @@ angular.module('CarreExample', ['ngCookies'])
 
     //set up the urls 
     var CARRE_DEVICES = 'http://devices.carre-project.eu/devices/accounts';
-    var API = 'http://beta.carre-project.eu:5050/carre.kmi.open.ac.uk:443/ws/'; 
+    var API = 'http://devices.carre-project.eu:443/ws/'; 
     
     
     //clean up the browser url
