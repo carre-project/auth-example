@@ -5,8 +5,8 @@ angular.module('CarreExample', ['ngCookies'])
   .controller('ExampleController', function($scope, $cookies, $location,$http) {
 
     //set up the urls 
-    var CARRE_DEVICES = 'http://devices.carre-project.eu/devices/accounts';
-    var API = 'http://devices.carre-project.eu/ws/'; 
+    var CARRE_DEVICES = 'https://devices.carre-project.eu/devices/accounts';
+    var API = 'https://devices.carre-project.eu/ws/'; 
     
     
     //clean up the browser url
